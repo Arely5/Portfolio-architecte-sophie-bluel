@@ -4,13 +4,16 @@ async function dataFetching() {
     let response = await data.json();
     const imagesSources = [];
     const captionContent = [];
+    const worksCategories = [];
 
     response.forEach(element => {
         imagesSources.push(element.imageUrl);
         captionContent.push(element.title);
+        worksCategories.push(element.categoryId);
     });
 
     createGalleryElements(imagesSources, captionContent);
+    filterByCategory(worksCategories);
 }
 
 dataFetching();
@@ -33,5 +36,25 @@ function createGalleryElements(imagesSources, captionContent) {
     }
 }
 
-/*figcaption.innerText = "Test";
-img.src = "assets/images/abajour-tahina.png"; */
+/* Categories filter */
+async function filterByCategory(worksCategories) {
+    let categoriesData = await fetch("http://localhost:5678/api/categories");
+    let responseCategories = await categoriesData.json();
+    const categoryId = [];
+    const categoryName = [];
+    const filtersWrap = document.getElementById("filters");
+
+    responseCategories.forEach(element => {
+        categoryId.push(element.id);
+        categoryName.push(element.name);
+    });
+
+
+    for (let i = 0; i < categoryId.length; i++) {
+        const filtersElements = document.createElement("li");
+
+        filtersElements.className = "filtersElements";
+        filtersElements.textContent = categoryName[i];
+        filtersWrap.appendChild(filtersElements);
+    }
+}

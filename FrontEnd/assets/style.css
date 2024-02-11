@@ -125,6 +125,44 @@ li:hover {
 	text-align: center;
 	margin-bottom: 1em;
 }
+
+#portfolio .filters {
+	display: flex;
+	justify-content: center;
+	height: 37px;
+	margin-bottom: 50px;
+	margin-top: 50px;
+}
+
+#portfolio .filters ul {
+	display: flex;
+	padding-left: 30px;
+}
+
+#portfolio .filters li {
+	font-family: 'Syne';
+	font-weight: 700;
+	font-size: 16px;
+	color: #1D6154;
+	display: flex;
+	align-items: center;
+	border: 1px solid #1D6154;
+	border-radius: 60px;
+	padding-right: 20px;
+	padding-left: 20px;
+	margin-left: 10px;
+}
+
+#portfolio .filters .selectedFilter {
+	background-color: #1D6154;
+	color: white;
+}
+
+#portfolio .filters li:hover {
+	background-color: #1D6154;
+	color: white;
+}
+
 .gallery {
 	width: 100%;
 	display: grid;
