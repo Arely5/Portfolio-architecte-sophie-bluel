@@ -37,15 +37,26 @@ async function createCategoryElement() {
         filtersElements.setAttribute("data-id", category.id);
         filtersWrap.appendChild(filtersElements);
 
-        filtersElements.addEventListener("click", filterByCategory);
-        filterByCategory(filtersElements);
+        filtersElements.addEventListener("click", () => filterByCategory(filtersElements));
     });
 }
 
 createCategoryElement();
 
-function filterByCategory(filtersElements, worksCategories ) {
-    console.log("it works");
-    /*utiliser  getAttribute*/
+function filterByCategory(filtersElements) {
+    const filtersId = filtersElements.getAttribute("data-id");
+    const figures = document.querySelectorAll("figure");
+
+    figures.forEach(figure => {
+        const figureId = figure.getAttribute("data-id");
+        const allFilter = document.getElementById("allCategories");
+
+        if (figureId === filtersId) {
+            figure.style.display = 'block';
+        } else {
+            figure.style.display = 'none';
+        }
+    });
+    
     /* Logique de comparaison */
 }
