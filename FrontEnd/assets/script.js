@@ -11,6 +11,7 @@ async function dataFetching() {
 
         img.src = element.imageUrl;
         figcaption.textContent = element.title;
+        figure.className = "figure-gallery";
         figure.setAttribute("data-id", element.categoryId);
         figure.setAttribute("alt", element.title);
         
@@ -45,11 +46,22 @@ createCategoryElement();
 
 function filterByCategory(filtersElements) {
     const filtersId = filtersElements.getAttribute("data-id");
-    const figures = document.querySelectorAll("figure");
+    const figures = document.querySelectorAll(".figure-gallery");
 
     figures.forEach(figure => {
         const figureId = figure.getAttribute("data-id");
         const allFilter = document.getElementById("allCategories");
+
+        document.querySelectorAll(".filtersElements").forEach(filter => {
+            filter.classList.remove("selectedFilter");
+        })
+
+        filtersElements.classList.add("selectedFilter");
+
+        allFilter.addEventListener("click", function () {
+            figure.style.display = 'block';
+            allFilter.textContent = "why?";
+        })
 
         if (figureId === filtersId) {
             figure.style.display = 'block';
@@ -57,6 +69,4 @@ function filterByCategory(filtersElements) {
             figure.style.display = 'none';
         }
     });
-    
-    /* Logique de comparaison */
 }
