@@ -52,16 +52,18 @@ function filterByCategory(filtersElements) {
         const figureId = figure.getAttribute("data-id");
         const allFilter = document.getElementById("allCategories");
 
+        allFilter.addEventListener("click", function () {
+            figure.style.display = 'block';
+            allFilter.classList.add("selectedFilter");
+            filtersElements.classList.remove("selectedFilter");
+        })
+
         document.querySelectorAll(".filtersElements").forEach(filter => {
             filter.classList.remove("selectedFilter");
         })
+        allFilter.classList.remove("selectedFilter");
 
         filtersElements.classList.add("selectedFilter");
-
-        allFilter.addEventListener("click", function () {
-            figure.style.display = 'block';
-            allFilter.textContent = "why?";
-        })
 
         if (figureId === filtersId) {
             figure.style.display = 'block';
