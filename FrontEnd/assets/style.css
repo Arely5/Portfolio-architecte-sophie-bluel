@@ -23,6 +23,16 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	color: #B1663C;
+}
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -52,6 +62,7 @@ body {
 	margin:auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
+	background-color: #FFFEF8;
 }
 header {
 	display: flex;
@@ -178,7 +189,7 @@ li:hover {
 }
 #contact {
 	width: 50%;
-margin: auto;
+	margin: auto;
 }
 #contact > * {
 	text-align: center;
@@ -225,3 +236,60 @@ footer nav ul {
 	margin: 2em
 }
 
+/* Login Page */
+
+.login-page-link {
+	font-weight: 600;
+}
+
+.login-form-section {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 30px;
+}
+
+.form-element {
+	width: 379px;
+	margin-bottom: 30px;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.form-element input {
+	height: 51px;
+	background-color: white;
+	border: none;
+	box-shadow: 0 4px 14px 0 #00000017;
+}
+
+.form-element label {
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 16px;
+	color: #3D3D3D;
+}
+
+.login-form-submit {
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.login-form-submit input {
+	width: 179px;
+	height: 36px;
+ 	border: none;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.forgotten-password {
+	text-decoration: underline;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 16px;
+	cursor: pointer;
+}
