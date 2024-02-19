@@ -40,6 +40,18 @@ async function createCategoryElement() {
 
         filtersElements.addEventListener("click", () => filterByCategory(filtersElements));
     });
+
+    const allFilter = document.getElementById("allCategories");
+    allFilter.addEventListener("click", function () {
+        const figures = document.querySelectorAll(".figure-gallery");
+        const selectedFilter = document.querySelector(".selectedFilter");
+
+        selectedFilter.classList.remove("selectedFilter");
+        allFilter.classList.add("selectedFilter");     
+        figures.forEach(figure => {
+            figure.style.display = 'block';
+        })
+    })
 }
 
 createCategoryElement();
@@ -47,23 +59,13 @@ createCategoryElement();
 function filterByCategory(filtersElements) {
     const filtersId = filtersElements.getAttribute("data-id");
     const figures = document.querySelectorAll(".figure-gallery");
+    const selectedFilter = document.querySelector(".selectedFilter");
+    selectedFilter.classList.remove("selectedFilter");
+
+    filtersElements.classList.add("selectedFilter");
 
     figures.forEach(figure => {
         const figureId = figure.getAttribute("data-id");
-        const allFilter = document.getElementById("allCategories");
-
-        allFilter.addEventListener("click", function () {
-            figure.style.display = 'block';
-            allFilter.classList.add("selectedFilter");
-            filtersElements.classList.remove("selectedFilter");
-        })
-
-        document.querySelectorAll(".filtersElements").forEach(filter => {
-            filter.classList.remove("selectedFilter");
-        })
-        allFilter.classList.remove("selectedFilter");
-
-        filtersElements.classList.add("selectedFilter");
 
         if (figureId === filtersId) {
             figure.style.display = 'block';
