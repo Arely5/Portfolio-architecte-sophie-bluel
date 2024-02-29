@@ -278,6 +278,12 @@ footer nav ul {
 	color: #3D3D3D;
 }
 
+#error-message {
+	color: rgb(151, 1, 1);
+	margin-bottom: 20px;
+	font-size: 15px;
+}
+
 .login-form-submit {
 	width: 100%;
 	display: flex;
