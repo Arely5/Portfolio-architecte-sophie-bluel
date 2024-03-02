@@ -43,14 +43,19 @@ function login() {
             throw new Error('Erreur lors de la requête: ' + response.statusText);
         }
 
-        window.location.href = "index.html";
+        return response.json();
+    })
+    .then(data => {
+        sessionStorage.setItem('authToken', data.token);
 
-        return response.json;
+        console.log(sessionStorage.getItem('authToken'));
+        
+        window.location.href = "index.html";
     })
     .catch(error => {
         let errorMessage = document.getElementById("error-message");
         
-        errorMessage.innerHTML = "Erreur dans l'adresse e-mail ou le mot de passe";
+        errorMessage.innerHTML = "Identifiants incorrects";
         console.error('Erreur: ' + error);
     });
 }
