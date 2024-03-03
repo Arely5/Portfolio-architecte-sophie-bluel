@@ -306,3 +306,23 @@ footer nav ul {
 	line-height: 16px;
 	cursor: pointer;
 }
+
+/* Modal */
+.modify {
+	position: relative;
+	top: -52px;
+	left: 700px;
+	display: none;
+	gap: 6px;
+}
+
+.modify img {
+	width: 15.58px;
+}
+
+.modify button {
+	border: none;
+	background-color: transparent;
+	font-size: 14px;
+	font-weight: 400;
+}
