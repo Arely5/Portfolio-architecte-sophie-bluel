@@ -362,7 +362,7 @@ footer nav ul {
 	z-index: 3;
 }
 
-.modal-window {
+.modal-window, .second-modal-window {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -379,7 +379,7 @@ footer nav ul {
 	width: 12.01px;
 }
 
-#modal-window-wrap .modal-window h3 {
+#modal-window-wrap .modal-window h3, .second-modal-window h3 {
 	font-family: 'Work Sans';
 	font-size: 26px;
 	font-weight: 400;
@@ -388,7 +388,7 @@ footer nav ul {
 	color: rgba(0, 0, 0, 1);
 }
 
-#modal-window-wrap .modal-window button {
+#modal-window-wrap .modal-window button, .second-modal-window button {
 	width: 237px;
 	height: 36px;
 	border-radius: 60px;
@@ -399,4 +399,13 @@ footer nav ul {
 	font-weight: 700;
 	line-height: 17px;
 	border: none;
+	cursor: pointer;
+}
+
+.second-modal-window {
+	display: none;
+}
+
+#modal-window-wrap .second-modal-window img {
+	width: 12.01px;
 }

@@ -35,3 +35,23 @@ closeSign.addEventListener('click', function closeModalWindow(event) {
 
     modalWindowWrap.style.display = "none";
 })
+
+/* Open second modal window */
+let addPicture = document.getElementById("add-picture-button");
+let arrowLeft = document.getElementById("back-first-modal-window");
+
+addPicture.addEventListener('click', function OpenSecondModalWindow(event) {
+    let secondModalWindow = document.querySelector(".second-modal-window");
+    let firstModalWindow = document.querySelector(".modal-window");
+
+    secondModalWindow.style.display = "flex";
+    firstModalWindow.style.display = "none";
+})
+
+arrowLeft.addEventListener('click', function GoBackModal(event) {
+    let secondModalWindow = document.querySelector(".second-modal-window");
+    let firstModalWindow = document.querySelector(".modal-window");
+
+    secondModalWindow.style.display = "none";
+    firstModalWindow.style.display = "flex";
+})
