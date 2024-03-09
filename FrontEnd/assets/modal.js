@@ -1,3 +1,4 @@
+/* Display edition mode */
 document.addEventListener("DOMContentLoaded", function() {
     let authToken = sessionStorage.getItem('authToken');
     let displayModify = document.getElementById("modify");
@@ -17,4 +18,20 @@ document.addEventListener("DOMContentLoaded", function() {
         editionBanner.style.display = "flex";
         logOut.innerText = "logout";
     }
+})
+
+/* Open and close modal window */
+let modifyButton = document.getElementById("modify-button");
+let closeSign = document.getElementById("close-modal-window");
+
+modifyButton.addEventListener('click', function openModalWindow(event) {
+    let modalWindowWrap = document.getElementById("modal-window-wrap");
+
+    modalWindowWrap.style.display = "flex";
+})
+
+closeSign.addEventListener('click', function closeModalWindow(event) {
+    let modalWindowWrap = document.getElementById("modal-window-wrap");
+
+    modalWindowWrap.style.display = "none";
 })
