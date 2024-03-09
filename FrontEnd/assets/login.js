@@ -14,11 +14,12 @@ function inputRetrival() {
 
     if (isMailCorrect === true) {
         errorMessage.innerHTML = "";
+
+        login();
+
     } else {
         errorMessage.innerHTML = "L'adresse e-mail n'est pas valide";
     }
-
-    login();
 }
 
 function login() {
@@ -53,7 +54,7 @@ function login() {
         window.location.href = "index.html";
     })
     .catch(error => {
-        let errorMessage = document.getElementById("error-message");
+        const errorMessage = document.getElementById("error-message");
         
         errorMessage.innerHTML = "Identifiants incorrects";
         console.error('Erreur: ' + error);
