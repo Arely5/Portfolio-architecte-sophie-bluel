@@ -308,12 +308,34 @@ footer nav ul {
 }
 
 /* Modal */
+#edition-banner {
+	position: absolute;
+	display: none;
+	gap: 6px;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 59px;
+	background-color: black;
+	color: white;
+	justify-content: center;
+	align-items: center;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+#edition-banner img {
+	width: 15.58px;
+	filter: invert(100%);
+}
+
 .modify {
 	position: relative;
 	top: -52px;
 	left: 700px;
 	display: none;
 	gap: 6px;
+	width: 100px;
 }
 
 .modify img {
