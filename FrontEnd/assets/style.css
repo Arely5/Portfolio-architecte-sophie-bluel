@@ -355,6 +355,7 @@ footer nav ul {
 	top: -60px;
 	left: 0;
 	right: 0;
+	bottom: -60px;
 	display: none;
 	justify-content: center;
 	align-items: center;
@@ -368,7 +369,6 @@ footer nav ul {
 	align-items: center;
 	background-color: white;
 	width: 630px;
-	height: 688px;
 	border-radius: 10px;
 	padding: 30px 40px 30px 40px ;
 }
