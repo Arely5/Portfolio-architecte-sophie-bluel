@@ -33,6 +33,12 @@ function openModal() {
     clonedGalleryItems.querySelectorAll('figcaption').forEach(function(figcaption) {
         figcaption.parentNode.removeChild(figcaption);
     })
+    clonedGalleryItems.querySelectorAll('img').forEach(function(img) {
+        img.classList.add("modal-gallery-img");
+    })
+
+    modalGallery.innerHTML = '';
+
     modalGallery.appendChild(clonedGalleryItems);
     modalWindowWrap.style.display = "flex";
 }
