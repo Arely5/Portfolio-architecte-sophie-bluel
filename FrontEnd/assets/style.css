@@ -413,6 +413,7 @@ footer nav ul {
 }
 
 .modal-gallery-img {
+	position: relative;
 	width: 76.61px;
 	height: 102.57px;
 }
@@ -420,6 +421,26 @@ footer nav ul {
 .modal-window .gallery {
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	grid-column-gap: 10px;
-	padding-bottom: 40px;
+	grid-row-gap: 10px;
+	padding-bottom: 30px;
 	border-bottom: 1px solid #B3B3B3;
+}
+
+.modal-window .gallery .delete-icone-container {
+	position: relative;
+	top: -100px;
+	left: 55px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 17px;
+	height: 17px;
+	border-radius: 2px;
+	background-color: black;
+}
+
+.modal-window .gallery .delete-icone-container img {
+	filter: invert(100%);
+	width: 9px;
+	height: 10.29px;
 }

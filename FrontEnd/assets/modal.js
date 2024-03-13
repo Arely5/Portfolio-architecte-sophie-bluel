@@ -34,7 +34,15 @@ function openModal() {
         figcaption.parentNode.removeChild(figcaption);
     })
     clonedGalleryItems.querySelectorAll('img').forEach(function(img) {
+        let deleteIconContainer = document.createElement("div");
+        let deleteIcon = document.createElement("img");
+
         img.classList.add("modal-gallery-img");
+        deleteIcon.src = "./assets/icons/trash-can-solid.svg";
+        deleteIconContainer.classList.add("delete-icone-container");
+
+        deleteIconContainer.appendChild(deleteIcon);
+        img.parentNode.appendChild(deleteIconContainer);
     })
 
     modalGallery.innerHTML = '';
