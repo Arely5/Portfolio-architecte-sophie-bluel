@@ -48,6 +48,39 @@ function openModal() {
     modalGallery.innerHTML = '';
 
     modalGallery.appendChild(clonedGalleryItems);
+
+    const deleteIconButtons = document.querySelectorAll(".delete-icone-container");
+
+    deleteIconButtons.forEach(function(deleteIconButton) {
+        deleteIconButton.addEventListener('click', function() {
+            let figureId = this.parentNode.parentNode.getAttribute('data-figure-id');
+            let galleryFigureToDelete = document.querySelector(`figure[data-figure-id="${figureId}"]`);
+            let authToken = sessionStorage.getItem('authToken');
+
+            fetch(`http://localhost:5678/api/works/${figureId}`, {
+                method: 'DELETE',
+                headers: {
+                    'authorization': `Bearer ${authToken}`,
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    this.parentNode.remove();
+                    if (galleryFigureToDelete) {
+                        galleryFigureToDelete.remove();
+                    }
+                    console.log('Bien supp');
+                } else {
+                    console.log("Nope");
+                }
+            })
+            .catch(error => {
+                console.log("Erreur:", error);
+            })
+        })
+    })
+
     modalWindowWrap.style.display = "flex";
 }
 

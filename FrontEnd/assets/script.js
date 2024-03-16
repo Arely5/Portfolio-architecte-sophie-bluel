@@ -12,6 +12,7 @@ async function dataFetching() {
         img.src = element.imageUrl;
         figcaption.textContent = element.title;
         figure.className = "figure-gallery";
+        figure.setAttribute("data-figure-id", element.id);
         figure.setAttribute("data-id", element.categoryId);
         figure.setAttribute("alt", element.title);
         
