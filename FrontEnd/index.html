@@ -38,12 +38,16 @@
 			<img id="back-first-modal-window" src="./assets/icons/arrow-left-solid.svg" alt="retour vers la fenêtre précédente">
 			<img id="close-modal-window" class="close-modal-window" src="./assets/icons/xmark-solid.svg" alt="icone fermeture de la fenêtre">
 			<h3>Ajout photo</h3>
+			<div class="add-image-wrap">
+				<img id="add-image-icon" src="./assets/icons/image-regular.svg" alt="icone représentant une image">
+				<button id="add-image-button">+ Ajouter photo</button>
+				<p id="add-image-info">jpg, png: 4mo max</p>
+			</div>
 			<form>
-				<input type="image">
 				<label>Titre</label>
-				<input type="text" name="title" id="title">
+				<input type="text" name="title" id="title-input">
 				<label>Catégorie</label>
-				<select name="categories" id="categories">
+				<select name="categories" id="categories-input">
 					<option value="choixUn">Choix 1</option>
 					<option value="choixDeux">Choix 2</option>
 					<option value="choixTrois">Choix 3</option>

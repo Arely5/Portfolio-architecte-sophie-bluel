@@ -370,13 +370,14 @@ footer nav ul {
 	background-color: white;
 	width: 630px;
 	border-radius: 10px;
-	padding: 30px 40px 30px 40px ;
+	padding: 15px 40px 30px 40px ;
 }
 
-#modal-window-wrap .modal-window #close-modal-window {
+#modal-window-wrap #close-modal-window {
 	position: relative;
 	left: 300px;
 	width: 12.01px;
+	cursor: pointer;
 }
 
 #modal-window-wrap .modal-window h3, .second-modal-window h3 {
@@ -404,21 +405,13 @@ footer nav ul {
 	margin-top: 30px;
 }
 
-.second-modal-window {
-	display: none;
-}
-
-#modal-window-wrap .second-modal-window img {
-	width: 12.01px;
-}
-
 .modal-gallery-img {
 	position: relative;
 	width: 76.61px;
 	height: 102.57px;
 }
 
-.modal-window .gallery {
+.modal-window .gallery, .second-modal-window form {
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	grid-column-gap: 10px;
 	grid-row-gap: 10px;
@@ -443,4 +436,86 @@ footer nav ul {
 	filter: invert(100%);
 	width: 9px;
 	height: 10.29px;
+}
+
+.second-modal-window {
+	display: none;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.second-modal-window h3 {
+	padding-bottom: 0;
+}
+
+.second-modal-window #back-first-modal-window {
+	position: relative;
+	right: 300px;
+	top: 15px;
+	width: 21px;
+	height: 18.01px;
+	cursor: pointer;
+}
+
+.second-modal-window .add-image-wrap {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	width: 420px;
+	border-radius: 3px;
+	background-color: #E8F1F6;
+	padding: 20px 0 20px;
+}
+
+.second-modal-window .add-image-wrap #add-image-icon {
+	width: 68.14px;
+	height: 59.62px;
+}
+
+.second-modal-window .add-image-wrap #add-image-button {
+	width: 173px;
+	height: 36px;
+	border-radius: 50px;
+	background-color: #CBD6DC;
+	font-family: 'Work Sans';
+	font-size: 14px;
+	font-weight: 600;
+	color: #306685;
+	margin-top: 0;
+}
+
+.second-modal-window .add-image-wrap #add-image-info {
+	font-family: 'Work Sans';
+	font-size: 10px;
+	font-weight: 400;
+	line-height: 12px;
+	color: #444444;
+}
+
+.second-modal-window form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.second-modal-window form #title-input, #categories-input {
+	width: 420px;
+	height: 51px;
+	box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
+	border: none;
+}
+
+.second-modal-window form #title-input, #categories-input:focus {
+	outline: none;
+}
+
+.second-modal-window form label {
+	width: 32px;
+	height: 16px;
+	font-family: 'Work Sans';
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 16px;
+	color: #3D3D3D;
 }
