@@ -52,7 +52,7 @@ function openModal() {
 
     deleteIconButtons.forEach(function(deleteIconButton) {
         deleteIconButton.addEventListener('click', function() {
-            let figureId = this.parentNode.parentNode.getAttribute('data-figure-id');
+            let figureId = this.parentNode.getAttribute('data-figure-id');
 
             this.parentNode.remove();
 
@@ -101,7 +101,6 @@ arrowLeft.addEventListener('click', goBackModal);
 
 /* Delete works */
 function deleteWorks(figureId) {
-    let galleryFigureToDelete = document.querySelector(`.figure-gallery[data-figure-id="${figureId}"]`);
     let authToken = sessionStorage.getItem('authToken');
 
             fetch(`http://localhost:5678/api/works/${figureId}`, {
@@ -113,9 +112,8 @@ function deleteWorks(figureId) {
             })
             .then(response => {
                 if (response.ok) {
-                    if (galleryFigureToDelete) {
-                        galleryFigureToDelete.remove();
-                    }
+                    const galleryFigureToDelete = document.querySelector(`.figure-gallery[data-figure-id="${figureId}"]`);
+                    galleryFigureToDelete.remove();
                     console.log('Bien supp');
                 } else {
                     console.log("Nope");
