@@ -43,17 +43,18 @@
 				<button id="add-image-button">+ Ajouter photo</button>
 				<p id="add-image-info">jpg, png: 4mo max</p>
 			</div>
-			<form>
+			<form method="post">
 				<label>Titre</label>
-				<input type="text" name="title" id="title-input">
+				<input type="text" name="title" id="title-input" required>
 				<label>Catégorie</label>
-				<select name="categories" id="categories-input">
+				<select name="categories" id="categories-input" required>
 					<option value="choixUn">Choix 1</option>
 					<option value="choixDeux">Choix 2</option>
 					<option value="choixTrois">Choix 3</option>
 				</select>
+				<div class="border-modal"></div>
+				<input class="submit-work" type="submit" value="Valider">
 			</form>
-			<button>Ajouter une photo</button>
 		</div>
 	</section>
 	<section id="introduction">

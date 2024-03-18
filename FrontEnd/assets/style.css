@@ -411,7 +411,7 @@ footer nav ul {
 	height: 102.57px;
 }
 
-.modal-window .gallery, .second-modal-window form {
+.modal-window .gallery {
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	grid-column-gap: 10px;
 	grid-row-gap: 10px;
@@ -451,7 +451,7 @@ footer nav ul {
 .second-modal-window #back-first-modal-window {
 	position: relative;
 	right: 300px;
-	top: 15px;
+	top: 40px;
 	width: 21px;
 	height: 18.01px;
 	cursor: pointer;
@@ -499,6 +499,11 @@ footer nav ul {
 	gap: 10px;
 }
 
+.second-modal-window form .border-modal {
+	border-bottom: 1px solid #B3B3B3;
+	padding-top: 30px;
+}
+
 .second-modal-window form #title-input, #categories-input {
 	width: 420px;
 	height: 51px;
@@ -518,4 +523,19 @@ footer nav ul {
 	font-weight: 600;
 	line-height: 16px;
 	color: #3D3D3D;
+}
+
+.second-modal-window form .submit-work {
+	width: 237px;
+	height: 36px;
+	border-radius: 60px;
+	background-color: rgba(29, 97, 84, 1);
+	color: white;
+	font-family: 'Syne';
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 17px;
+	border: none;
+	cursor: pointer;
+	margin-top: 30px;
 }

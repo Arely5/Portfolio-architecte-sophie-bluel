@@ -122,6 +122,4 @@ function deleteWorks(figureId) {
             .catch(error => {
                 console.log("Erreur:", error);
             })
-
-            console.log(figureId);
         }
