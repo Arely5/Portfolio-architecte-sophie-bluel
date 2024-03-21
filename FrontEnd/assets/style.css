@@ -481,8 +481,18 @@ footer nav ul {
 	font-family: 'Work Sans';
 	font-size: 14px;
 	font-weight: 600;
+	text-align: center;
 	color: #306685;
-	margin-top: 0;
+	cursor: pointer;
+}
+
+.second-modal-window .add-image-wrap #add-image-button span {
+	position: relative;
+	top: 10px;
+}
+
+.second-modal-window .add-image-wrap #add-image-input {
+	display: none;
 }
 
 .second-modal-window .add-image-wrap #add-image-info {
