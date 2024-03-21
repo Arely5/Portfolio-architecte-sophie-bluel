@@ -123,3 +123,63 @@ function deleteWorks(figureId) {
                 console.log("Erreur:", error);
             })
         }
+
+
+/* Add works */
+let form = document.getElementById('add-work-form');
+let workImage = "";
+let workTitle = "";
+let workCategories = "";
+/* fetch the categories from api to dispaly them in the select element*/
+
+const inputImage = document.getElementById('add-image-input');
+const inputTitle = document.getElementById('title-input');
+const selectCategory = document.getElementById('categories-input');
+
+inputImage.addEventListener('change', function(event) {
+    let file = event.target.files[0];
+    
+    workImage = file;
+})
+
+inputTitle.addEventListener('input', function(event) {
+    workTitle = event.target.value;
+})
+
+selectCategory.addEventListener('change', function(event) {
+    workCategories = event.target.value;
+})
+
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    addWorks();
+})
+
+
+function addWorks() {
+    let authToken = sessionStorage.getItem('authToken');
+
+    let formData = new FormData();
+    formData.append('image', workImage);
+    formData.append('title', workTitle);
+    formData.append('category', workCategories);
+
+            fetch("http://localhost:5678/api/works", {
+                method: 'POST',
+                headers: {
+                    'authorization': `Bearer ${authToken}`
+                },
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log("Projet bien ajouté!");
+                } else {
+                    console.log("Erreur lors de l'ajout: ", response.status);
+                }
+            })
+            .catch(error => {
+                console.log("Erreur:", error);
+            })
+        }
