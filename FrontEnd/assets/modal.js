@@ -124,13 +124,11 @@ function deleteWorks(figureId) {
             })
         }
 
-
 /* Add works */
 let form = document.getElementById('add-work-form');
 let workImage = "";
 let workTitle = "";
 let workCategories = "";
-/* fetch the categories from api to dispaly them in the select element*/
 
 const inputImage = document.getElementById('add-image-input');
 const inputTitle = document.getElementById('title-input');
@@ -147,7 +145,8 @@ inputTitle.addEventListener('input', function(event) {
 })
 
 selectCategory.addEventListener('change', function(event) {
-    workCategories = event.target.value;
+    const selectedOption = event.target.options[event.target.selectedIndex];
+    workCategories = selectedOption.getAttribute("data-id");
 })
 
 
@@ -165,10 +164,14 @@ function addWorks() {
     formData.append('title', workTitle);
     formData.append('category', workCategories);
 
+    console.log('image', workImage);
+    console.log('title', workTitle);
+    console.log('category', workCategories);
+
             fetch("http://localhost:5678/api/works", {
                 method: 'POST',
                 headers: {
-                    'authorization': `Bearer ${authToken}`
+                    'Authorization': `Bearer ${authToken}`
                 },
                 body: formData
             })

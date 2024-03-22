@@ -30,14 +30,21 @@ async function createCategoryElement() {
     let categoriesData = await fetch("http://localhost:5678/api/categories");
     let responseCategories = await categoriesData.json();
     const filtersWrap = document.getElementById("filters");
+    const selectCategory = document.getElementById('categories-input');
 
     responseCategories.forEach(category => {
         const filtersElements = document.createElement("li");
+        const selectOptions = document.createElement("option");
 
         filtersElements.className = "filtersElements";
         filtersElements.textContent = category.name;
         filtersElements.setAttribute("data-id", category.id);
         filtersWrap.appendChild(filtersElements);
+
+        selectOptions.textContent = category.name;
+        selectOptions.setAttribute("data-id", category.id);
+        selectCategory.appendChild(selectOptions);
+
 
         filtersElements.addEventListener("click", () => filterByCategory(filtersElements));
     });
