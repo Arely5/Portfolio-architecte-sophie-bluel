@@ -476,6 +476,7 @@ footer nav ul {
 .second-modal-window .add-image-wrap #add-image-button {
 	width: 173px;
 	height: 36px;
+	visibility: visible;
 	border-radius: 50px;
 	background-color: #CBD6DC;
 	font-family: 'Work Sans';
@@ -501,6 +502,14 @@ footer nav ul {
 	font-weight: 400;
 	line-height: 12px;
 	color: #444444;
+}
+
+.second-modal-window #preview-image {
+	position: absolute;
+	display: none;
+	top: 110px;
+	width: 129px;
+	height: 165px;
 }
 
 .second-modal-window form {

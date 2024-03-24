@@ -126,18 +126,23 @@ function deleteWorks(figureId) {
 
 /* Add works */
 let form = document.getElementById('add-work-form');
-let workImage = "";
+let workImage = null;
 let workTitle = "";
 let workCategories = "";
 
 const inputImage = document.getElementById('add-image-input');
 const inputTitle = document.getElementById('title-input');
 const selectCategory = document.getElementById('categories-input');
+const imageToPreview = document.getElementById("preview-image");
+const addImageButton = document.getElementById("add-image-button");
 
 inputImage.addEventListener('change', function(event) {
     let file = event.target.files[0];
-    
+
     workImage = file;
+    imageToPreview.src = URL.createObjectURL(file);
+    imageToPreview.style.display = "block";
+    addImageButton.style.visibility = "hidden";
 })
 
 inputTitle.addEventListener('input', function(event) {
@@ -163,10 +168,6 @@ function addWorks() {
     formData.append('image', workImage);
     formData.append('title', workTitle);
     formData.append('category', workCategories);
-
-    console.log('image', workImage);
-    console.log('title', workTitle);
-    console.log('category', workCategories);
 
             fetch("http://localhost:5678/api/works", {
                 method: 'POST',
