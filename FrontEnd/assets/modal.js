@@ -70,11 +70,15 @@ function closeModal() {
 modifyButton.addEventListener('click', openModal);
 
 closeSign.forEach(function(closeSign) {
-    closeSign.addEventListener('click', closeModal);
+    closeSign.addEventListener('click', ()=> {
+        goBackModal();
+        closeModal();
+    });
 })
 
 modalWindowWrap.addEventListener('click', function(event) {
     if (event.target === modalWindowWrap) {
+        goBackModal();
         closeModal();
     }
 });
@@ -145,10 +149,6 @@ inputImage.addEventListener('change', function(event) {
     addImageButton.style.visibility = "hidden";
 })
 
-inputTitle.addEventListener('input', function(event) {
-    workTitle = event.target.value;
-})
-
 selectCategory.addEventListener('change', function(event) {
     const selectedOption = event.target.options[event.target.selectedIndex];
     workCategories = selectedOption.getAttribute("data-id");
@@ -166,7 +166,7 @@ function addWorks() {
 
     let formData = new FormData();
     formData.append('image', workImage);
-    formData.append('title', workTitle);
+    formData.append('title', inputTitle.value);
     formData.append('category', workCategories);
 
             fetch("http://localhost:5678/api/works", {
@@ -179,6 +179,8 @@ function addWorks() {
             .then(response => {
                 if (response.ok) {
                     console.log("Projet bien ajouté!");
+                    dataFetching();
+
                 } else {
                     console.log("Erreur lors de l'ajout: ", response.status);
                 }
