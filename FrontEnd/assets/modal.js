@@ -30,6 +30,8 @@ function openModal() {
     let modalGallery = document.querySelector(".modal-gallery");
     let clonedGalleryItems = galleryItems.cloneNode(true);
 
+    clonedGalleryItems.id = "cloned-gallery";
+    clonedGalleryItems.classList.remove("gallery");
     clonedGalleryItems.querySelectorAll('figcaption').forEach(function(figcaption) {
         figcaption.parentNode.removeChild(figcaption);
     })
@@ -158,6 +160,9 @@ selectCategory.addEventListener('change', function(event) {
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     addWorks();
+    clearForm();
+    goBackModal();
+    closeModal();
 })
 
 
@@ -189,3 +194,13 @@ function addWorks() {
                 console.log("Erreur:", error);
             })
         }
+
+/* Form management */
+
+function clearForm() {
+    inputImage.value = null;
+    addImageButton.style.visibility = "visible";
+    imageToPreview.style.display = "none";
+    inputTitle.value = "";
+    selectCategory.value = "Choisissez une catégorie";
+}

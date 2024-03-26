@@ -411,7 +411,8 @@ footer nav ul {
 	height: 102.57px;
 }
 
-.modal-window .gallery {
+.modal-window #cloned-gallery {
+	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	grid-column-gap: 10px;
 	grid-row-gap: 10px;
@@ -419,7 +420,7 @@ footer nav ul {
 	border-bottom: 1px solid #B3B3B3;
 }
 
-.modal-window .gallery .delete-icone-container {
+.modal-window #cloned-gallery .delete-icone-container {
 	position: relative;
 	top: -100px;
 	left: 55px;
@@ -432,7 +433,7 @@ footer nav ul {
 	background-color: black;
 }
 
-.modal-window .gallery .delete-icone-container img {
+.modal-window #cloned-gallery .delete-icone-container img {
 	filter: invert(100%);
 	width: 9px;
 	height: 10.29px;
@@ -507,7 +508,7 @@ footer nav ul {
 .second-modal-window #preview-image {
 	position: absolute;
 	display: none;
-	top: 110px;
+	top: 125px;
 	width: 129px;
 	height: 165px;
 }
