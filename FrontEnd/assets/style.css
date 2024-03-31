@@ -559,3 +559,8 @@ footer nav ul {
 	cursor: pointer;
 	margin-top: 30px;
 }
+
+*:disabled {
+	background-color: #A7A7A7 !important;
+	cursor: default !important;
+}

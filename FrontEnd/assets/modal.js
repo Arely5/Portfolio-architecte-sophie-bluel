@@ -131,7 +131,7 @@ function deleteWorks(figureId) {
         }
 
 /* Add works */
-let form = document.getElementById('add-work-form');
+const form = document.getElementById('add-work-form');
 let workImage = null;
 let workTitle = "";
 let workCategories = "";
@@ -141,6 +141,21 @@ const inputTitle = document.getElementById('title-input');
 const selectCategory = document.getElementById('categories-input');
 const imageToPreview = document.getElementById("preview-image");
 const addImageButton = document.getElementById("add-image-button");
+const submitButton = document.getElementById('submit-work');
+
+function allInputsFilled() {
+    const imageFilled = inputImage.value.trim() !== '';
+    const titleFilled = inputTitle.value.trim() !== '';
+    const categorySelected = selectCategory.value !== '';
+
+    return imageFilled && titleFilled && categorySelected;
+}
+
+form.addEventListener('input', function() {
+    if (allInputsFilled()) {
+        submitButton.removeAttribute('disabled');
+    }
+})
 
 inputImage.addEventListener('change', function(event) {
     let file = event.target.files[0];
@@ -156,7 +171,6 @@ selectCategory.addEventListener('change', function(event) {
     workCategories = selectedOption.getAttribute("data-id");
 })
 
-
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     addWorks();
@@ -168,7 +182,6 @@ form.addEventListener('submit', function(event) {
 
 function addWorks() {
     let authToken = sessionStorage.getItem('authToken');
-
     let formData = new FormData();
     formData.append('image', workImage);
     formData.append('title', inputTitle.value);
@@ -202,5 +215,5 @@ function clearForm() {
     addImageButton.style.visibility = "visible";
     imageToPreview.style.display = "none";
     inputTitle.value = "";
-    selectCategory.value = "Choisissez une catégorie";
+    selectCategory.value = " ";
 }
