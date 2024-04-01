@@ -120,9 +120,8 @@ function deleteWorks(figureId) {
                 if (response.ok) {
                     const galleryFigureToDelete = document.querySelector(`.figure-gallery[data-figure-id="${figureId}"]`);
                     galleryFigureToDelete.remove();
-                    console.log('Bien supp');
                 } else {
-                    console.log("Nope");
+                    console.log("Erreur lors de la suppression");
                 }
             })
             .catch(error => {
@@ -196,7 +195,6 @@ function addWorks() {
             })
             .then(response => {
                 if (response.ok) {
-                    console.log("Projet bien ajouté!");
                     dataFetching();
 
                 } else {

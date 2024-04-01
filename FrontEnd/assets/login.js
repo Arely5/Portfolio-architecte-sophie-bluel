@@ -48,8 +48,6 @@ function login() {
     })
     .then(data => {
         sessionStorage.setItem('authToken', data.token);
-
-        console.log(sessionStorage.getItem('authToken'));
         
         window.location.href = "index.html";
     })

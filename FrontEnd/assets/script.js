@@ -7,7 +7,6 @@ async function dataFetching() {
     gallery.innerHTML = "";
 
     response.forEach(element => {
-        console.log("test");
         const figure = document.createElement("figure");
         const img = document.createElement("img");
         const figcaption = document.createElement("figcaption");
